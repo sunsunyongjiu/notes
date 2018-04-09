@@ -1,0 +1,26 @@
+section[id="test1"]{
+    display: flex;
+    height: 100px;
+    width: 100vw;
+    background: silver;
+    // 主轴排列方向row row-reverse column column-reverse
+    flex-direction: row;
+    // flex-wrap一条轴线拍不下如何换行：nowrap wrap wrap-reverse
+    flex-wrap: no-wrap;
+    // flex-flow direction和wrap简写
+    flex-flow: row no-wrap;
+    // justify-content 项目在主轴上的对齐方式 flex-start flex-end center space-between space-around
+    align-items: center;
+
+
+    .items{
+        background: gold;
+        width:200px;
+        height: 50px;
+        border: 1px solid #fff;
+    }
+}
+body,html{
+    margin: 0;
+    padding: 0;
+}

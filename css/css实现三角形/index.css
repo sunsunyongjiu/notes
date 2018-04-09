@@ -6,3 +6,12 @@
   border-left: 200px solid black;
   border-right: 100px solid green;
 }
+
+.jiao {
+  position: relative;
+  height: 0px;
+  width: 0px;
+  border-top: 90px solid transparent;
+  border-right: 100px solid black;
+  border-bottom: 100px solid transparent;
+}

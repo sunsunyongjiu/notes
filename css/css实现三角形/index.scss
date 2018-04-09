@@ -1,9 +1,18 @@
 // 原理： 通过高宽设置0，四个border呈现三角形
-.test{
+.test {
     height: 0;
     width: 0;
     border-top: 100px solid red;
     border-bottom: 100px solid yellow;
     border-left: 200px solid black;
     border-right: 100px solid green;
+}
+
+.jiao {
+    position: relative;
+    height: 0px;
+    width: 0px;
+    border-top: 90px solid transparent;
+    border-right: 100px solid black;
+    border-bottom: 100px solid transparent;
 }
