@@ -17,5 +17,5 @@
         var parent=fourth.parentElement;
         parent.removeChild(fourth)
     }
-    
+    var a=111
 })()
