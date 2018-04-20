@@ -22,3 +22,64 @@ window.onload = function () {
     ctx.strokeStyle = '#0000ff';
     ctx.stroke(path);
 }
+
+// function Student(name, age) {
+//     this.name = name;
+// }
+// Student.prototype.say = function () {
+//     console.log('hello' + this.name)
+// }
+// var xiaohong = new Student('小红')
+// var xiaoming = new Student('小明')
+// xiaohong.say()
+// xiaoming.say()
+// console.log(Student.prototype)
+// console.log(xiaoming.__proto__.constructor===Student)
+// console.log(xiaohong.say === xiaoming.say)
+
+// var a=[1];
+// var b=[1];
+// console.log(a)
+// function JsonA(name){
+//     this.name=name;
+// }
+// var B=new JsonA()
+// console.log(JsonA.prototype.constructor===JsonA)
+// console.log(B.__proto__.constructor)
+// class Student{
+//     constructor(name){
+//         this.name=name;
+//         this.zhiye='学生'
+//     }
+//     show(){
+//         console.log(this.name)
+//     }
+//     showZhiye(){
+//         console.log(this.zhiye)
+//     }
+// }
+// class H5 extends Student{
+//     constructor(name){
+//         super (name);
+//         this.name=name
+
+//     }
+// }
+// var zhipeng=new Student('孙志鹏');
+// zhipeng.show();
+// var sunshiyi=new H5('孙世一');
+// sunshiyi.show();
+// console.log(sunshiyi.__proto__)
+// console.log(Student.prototype)
+
+// function show(){
+//     console.log(this)
+// }
+// show()
+// var a={
+//     a1:1,
+//     a2:2
+// }
+// console.log(a)
+// delete a.a2
+// console.log(a)
