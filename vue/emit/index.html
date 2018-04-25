@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-for="item in msgs">
+            {{item.message}}
+        </div>
+        <son-item v-on:sonsay='fatherKnow'></son-item>
+        
+    </div>
+</body>
+<script>
+    Vue.component('son-item',{
+        template:'<div><input type="text" v-model="son" v-focus><button @click="tellFather">听我说</button></div>',
+        data:function(){
+            return{
+                son:'儿子说'
+            }
+        },
+        methods:{
+            tellFather:function(){
+                this.$emit('sonsay',{message:this.son})
+            }
+        },
+        directives:{
+            focus:{
+                inserted:function(el){
+                    el.focus()
+                }
+            }
+        }
+    })
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msgs:[{message:'子组件向父组件传值'}]
+        },
+        methods:{
+           fatherKnow:function(message){
+               this.msgs.push(message)
+           }
+        }
+    })
+</script>
+</html>

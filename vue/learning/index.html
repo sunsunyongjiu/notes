@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{mes}}<br>
+        {{reMes}}
+        <div v-for="(item,index) in todos">
+            {{index}} {{item.text}}
+        </div>
+        <button @click="reverse">逆转信息</button>
+        <ul>
+            <item v-for="item in todos" :todo="item.text"></item>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.component('item', {
+        props:['todo'],
+        template: '<li>{{todo}}</li>',
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            mes: `页面加载于${new Date().toLocaleString()}`,
+            todos: [{
+                    text: '学习JS'
+                },
+                {
+                    text: '学习Vue'
+                },
+                {
+                    text: '好好学习'
+                },
+            ]
+        },
+        methods: {
+            reverse: function () {
+                this.mes = (Math.random()*1000).toString();
+            }
+        },
+        watch:{
+            mes:function(newValue,oldValue){
+                console.log(newValue)
+            }
+        },
+        computed:{
+            reMes:function(mes){
+                return this.mes.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+
+</html>
